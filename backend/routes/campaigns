@@ -1,0 +1,29 @@
+const express = require('express')
+const {
+    createCampaign,
+    getCampaigns,
+    getCampaign,
+    deleteCampaign,
+    updateCampaign
+} = require('../controllers/campaignController') 
+
+
+const router = express.Router()
+
+//GET all campaigns
+router.get('/', getCampaigns)
+
+//GET a single campaign
+router.get('/:id', getCampaign)
+
+//POST a new campaign
+router.post('/', createCampaign)
+
+//DELETE a campaign
+router.delete('/:id', deleteCampaign)
+
+//UPDATE a campaign
+router.patch('/:id', updateCampaign)
+
+
+module.exports = router

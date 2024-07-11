@@ -1,0 +1,29 @@
+const express = require('express')
+const {
+    createStock,
+    getStocks,
+    getStock,
+    deleteStock,
+    updateStock
+} = require('../controllers/stockController') 
+
+
+const router = express.Router()
+
+//GET all stocks
+router.get('/', getStocks)
+
+//GET a single stock
+router.get('/:id', getStock)
+
+//POST a new stock
+router.post('/', createStock)
+
+//DELETE a stock
+router.delete('/:id', deleteStock)
+
+//UPDATE a stock
+router.patch('/:id', updateStock)
+
+
+module.exports = router

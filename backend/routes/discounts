@@ -1,0 +1,29 @@
+const express = require('express')
+const {
+    createDiscount,
+    getDiscounts,
+    getDiscount,
+    deleteDiscount,
+    updateDiscount
+} = require('../controllers/discountController') 
+
+
+const router = express.Router()
+
+//GET all stockDiscounts
+router.get('/', getDiscounts)
+
+//GET a single stock
+router.get('/:id', getDiscount)
+
+//POST a new stock
+router.post('/', createDiscount)
+
+//DELETE a stock
+router.delete('/:id', deleteDiscount)
+
+//UPDATE a stock
+router.patch('/:id', updateDiscount)
+
+
+module.exports = router
